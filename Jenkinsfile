@@ -9,15 +9,16 @@ pipeline {
         git 'https://github.com/romalap/hedgedoc.git'
       }
     }
-    stage('Building image') {
-      steps{
+  }
+  agent { dockerfile true }
+  stages {
+    steps{
           dockerfile {
         filename 'Dockerfile'
         dir 'build'
         label 'hedgedoc:latest'
         args '-v /tmp:/tmp'
-        }
-      }
-    }
+       }
+     }
   }
 }
