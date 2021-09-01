@@ -10,8 +10,8 @@ pipeline {
         }
       }
       stage('build docker') {
-        steps {
-          agent { 
+        agent {
+          steps {
             dockerfile {
               filename 'Dockerfile'
               dir 'build'
