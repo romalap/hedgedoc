@@ -12,7 +12,7 @@ pipeline {
             steps { 
                 sh "rm -rf *"
                 git url: 'git@github.com:romalap/jenkins_test.git',
-                credentialsId: "jenkins_test"
+                credentialsId: "github"
               }
             }
       stage('build docker') {
