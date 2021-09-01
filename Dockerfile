@@ -15,7 +15,7 @@ FROM basebuilder AS builder
 # Build arguments to change source url, branch or tag
 ARG CODIMD_REPOSITORY
 ARG HEDGEDOC_REPOSITORY=https://github.com/hedgedoc/hedgedoc.git
-ARG VERSION=${params.VERSION}
+ARG VERSION=${VERSION}
 RUN if [ -n "${CODIMD_REPOSITORY}" ]; then echo "CODIMD_REPOSITORY is deprecated. Please use HEDGEDOC_REPOSITORY instead" && exit 1; fi
 
 # Clone the source and remove git repository but keep the HEAD file
