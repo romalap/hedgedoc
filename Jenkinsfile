@@ -2,7 +2,7 @@ pipeline {
   parameters {
     choice(name: 'VERSION', choices: ['latest', '1.8.2', '1.8.1'], description: 'Pick the VERSION')
     }
-  agent { label 'node2' }
+  agent { label 'node2_web' }
     stages {
       stage('Cloning Git') {
         steps {
