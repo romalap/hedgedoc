@@ -1,8 +1,4 @@
-pipeline {
-    parameters {
-    choice(name: 'VERSION', choices: ['latest', '1.8.2', '1.8.1'], description: 'Pick the VERSION')
-    }
 node('node2_web') {
+  git 'https://github.com/romalap/hedgedoc.git' // checks out Dockerfile & Makefile
   def hedgedoc = docker.build 'hedgedoc:latest'
-}
 }
