@@ -4,7 +4,8 @@ pipeline {
     }
     agent none
     stages {
-      stage('build docker') {
+      node ('node2_web') {
+        stage('build docker') {
           agent { dockerfile true } 
           steps {
             dockerfile {
@@ -13,7 +14,8 @@ pipeline {
               label 'hedgedoc'
               args '-v /tmp:/tmp'
             }
+          }
+        }
       }
     }
-  }
 }
