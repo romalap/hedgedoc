@@ -1,4 +1,4 @@
 node('node2_web') {
 checkout scm
-  def customImage = docker.build("hedgedoc:${params.CHOICE}")
+  def customImage = docker.build("hedgedoc:${params.VERSION}")
 }
