@@ -5,15 +5,14 @@ pipeline {
     agent none
     stages {
       stage('build docker') {
+          agent { dockerfile true } 
           steps {
-            agent {
             dockerfile {
               filename 'Dockerfile'
               dir 'build'
               label 'hedgedoc:latest'
               args '-v /tmp:/tmp'
-            }  
-        }
+            }
       }
     }
   }
