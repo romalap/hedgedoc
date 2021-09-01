@@ -4,9 +4,10 @@ pipeline {
     }
   agent { label 'node2_web' }
     stages {
-      stage('Cloning Git') {
+      stage('Clone Git') {
         steps {
-          git 'https://github.com/romalap/hedgedoc.git'
+          git url: 'https://github.com/romalap/hedgedoc.git'
+          credentialsId: "github"
         }
       }
       stage('build docker') {
