@@ -5,12 +5,17 @@ pipeline {
   agent { dockerfile true }
     stages {
       stage('Cloning Git') {
-      steps{
+        steps {
+          git 'https://github.com/romalap/hedgedoc.git'
+      }
+    }
+      stage('Cloning Git') {
+        steps{
           dockerfile {
-        filename 'Dockerfile'
-        dir 'build'
-        label 'hedgedoc:latest'
-        args '-v /tmp:/tmp'
+            filename 'Dockerfile'
+            dir 'build'
+            label 'hedgedoc:latest'
+            args '-v /tmp:/tmp'
           }
        }
      }
