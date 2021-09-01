@@ -9,7 +9,6 @@ pipeline {
           sh "git clone https://github.com/romalap/hedgedoc.git /var/lib/jenkins/workspace"
         }
       }
-    agent {
       stage('build docker') {
           steps {
             dockerfile {
@@ -19,7 +18,6 @@ pipeline {
               args '-v /tmp:/tmp'
             }
           }
-        }
       }
     }
 }
