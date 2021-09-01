@@ -9,9 +9,9 @@ pipeline {
           sh "git clone https://github.com/romalap/hedgedoc.git"
         }
       }
-  agent { label 'node2_web' }
       stage('build docker') {
           steps {
+            agent {
             dockerfile {
               filename 'Dockerfile'
               dir 'build'
@@ -19,6 +19,7 @@ pipeline {
               args '-v /tmp:/tmp'
             }
           }
+        }  
       }
     }
 }
