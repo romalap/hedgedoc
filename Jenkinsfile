@@ -4,8 +4,8 @@ pipeline {
     }
   agent { label 'node2' }
     stages {
-      steps {
-        stage('Cloning Git') {
+      stage('Cloning Git') {
+        steps {
           git 'https://github.com/romalap/hedgedoc.git'
         }
       }
