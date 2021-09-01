@@ -2,13 +2,14 @@ pipeline {
   parameters {
     choice(name: 'VERSION', choices: ['latest', '1.8.2', '1.8.1'], description: 'Pick the VERSION')
     }
-  agent { label 'node2_web'
+  agent { label 'node2_web' }
     stages {
       stage('Clone Git') {
         steps {
           sh "git clone https://github.com/romalap/hedgedoc.git"
         }
       }
+  agent { label 'node2_web' }
       stage('build docker') {
           steps {
             dockerfile {
@@ -20,5 +21,4 @@ pipeline {
           }
       }
     }
-  }
 }
