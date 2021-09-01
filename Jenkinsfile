@@ -4,18 +4,22 @@ pipeline {
     }
   agent { label 'node2' }
     stages {
-      stage('Cloning Git') {
+      steps {
+        stage('Cloning Git') {
           git 'https://github.com/romalap/hedgedoc.git'
+        }
       }
       stage('build docker') {
-        agent { 
-          dockerfile {
-            filename 'Dockerfile'
-            dir 'build'
-            label 'hedgedoc:latest'
-            args '-v /tmp:/tmp'
+        steps {
+          agent { 
+            dockerfile {
+              filename 'Dockerfile'
+              dir 'build'
+              label 'hedgedoc:latest'
+              args '-v /tmp:/tmp'
+            }
           }
         }
-      }  
+      }
     }
 }
