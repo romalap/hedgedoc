@@ -10,7 +10,7 @@ pipeline {
             dockerfile {
               filename 'Dockerfile'
               dir 'build'
-              label 'hedgedoc:latest'
+              label 'hedgedoc'
               args '-v /tmp:/tmp'
             }
       }
