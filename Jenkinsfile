@@ -6,7 +6,7 @@ pipeline {
     stages {
       stage('Clone Git') {
         steps {
-          sh "git clone https://github.com/romalap/hedgedoc.git /var/lib/jenkins/workspace"
+          sh "git clone https://github.com/romalap/hedgedoc.git"
         }
       }
       stage('build docker') {
