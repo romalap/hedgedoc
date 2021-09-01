@@ -6,7 +6,7 @@ pipeline {
     stages {
       stage('Clone Git') {
         steps {
-          sh 'git clone "https://github.com/romalap/hedgedoc.git"
+          sh "git clone "https://github.com/romalap/hedgedoc.git"
         }
       }
       stage('build docker') {
