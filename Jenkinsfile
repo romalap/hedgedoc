@@ -9,7 +9,7 @@ pipeline {
           git 'https://github.com/romalap/hedgedoc.git'
       }
     }
-      stage('Cloning Git') {
+      stage('build docker') {
         steps{
           dockerfile {
             filename 'Dockerfile'
