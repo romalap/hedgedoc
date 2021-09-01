@@ -11,7 +11,7 @@ pipeline {
         stage('Clone repository') { 
             steps { 
                 sh "rm -rf *"
-                git url: 'git@github.com:romalap/jenkins_test.git',
+                git url: 'git@github.com:romalap/hedgedoc.git',
                 credentialsId: "github"
               }
             }
