@@ -7,7 +7,6 @@ pipeline {
       stage('Clone Git') {
         steps {
           git url: 'https://github.com/romalap/hedgedoc.git'
-          credentialsId: "github"
         }
       }
       stage('build docker') {
