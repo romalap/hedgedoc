@@ -1,5 +1,7 @@
 pipeline {
-    agent { label 'node1_sql' }
+    agent { label 'node1_sql' 
+    node { label 'node1_sql' }
+    }
     stages {
         stage('run_docker') {
             steps {
