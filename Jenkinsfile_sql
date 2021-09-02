@@ -1,6 +1,8 @@
 pipeline {
     agent none
+    agent {
     node {label 'node1_sql'}
+    }
     stages {
         stage('Test curl') {
             agent {
