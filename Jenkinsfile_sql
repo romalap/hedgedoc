@@ -5,7 +5,7 @@ pipeline {
         stage('Test curl') {
             agent {
                 docker { 
-                    image 'hedgedoc:1.8.2' 
+                    image 'mariadb:10' 
                     args "--network=host"
                 }
             }
