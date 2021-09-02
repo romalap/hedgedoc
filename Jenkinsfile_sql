@@ -2,8 +2,9 @@ pipeline {
     agent { label 'node1_sql' }
     stages {
         stage('run_docker') {
+            steps {
             sh 'docker create mariadb:10'
             }
         }
-    
+    }
 }
