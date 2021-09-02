@@ -1,0 +1,12 @@
+version: '3'
+services:
+  database:
+    image: mariadb:10
+    environment:
+      - MYSQL_USER=hedgedoc
+      - MYSQL_PASSWORD=njhfnjh1
+      - MYSQL_DATABASE=hedgedoc
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+    volumes:
+      - $PWD/database:/var/lib/mysql
+    restart: always
