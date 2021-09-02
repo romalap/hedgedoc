@@ -1,5 +1,5 @@
 pipeline {
-    agent none
+ //   agent none
     agent {
     node {label 'node1_sql'}
     }
