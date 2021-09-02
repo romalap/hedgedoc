@@ -1,19 +1,9 @@
 pipeline {
  //   agent none
-    agent {
-    node {label 'node1_sql'}
-    }
+    agent { label 'node1_sql'
     stages {
         stage('run_docker') {
-            agent {
-                docker { 
-                    docker.image("mariadb:10")
-                }
-            }
-            steps {
-                sh """#!/bin/sh
-
-                """
+            sh 'docker create mariadb:10'
             }
         }
     }
