@@ -4,11 +4,10 @@ pipeline {
     node {label 'node1_sql'}
     }
     stages {
-        stage('Test curl') {
+        stage('run_docker') {
             agent {
                 docker { 
-                    image 'mariadb:10' 
-                    args "--network=host"
+                    docker.image("mariadb:10")
                 }
             }
             steps {
