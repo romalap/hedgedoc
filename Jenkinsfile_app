@@ -1,0 +1,10 @@
+pipeline {
+    agent { label 'node1_sql' } 
+    stages {
+        stage('run_docker') {
+            steps {
+            sh 'sudo docker-compose -f docker-compose-app.yaml up -d'
+            }
+        }
+    }
+}
