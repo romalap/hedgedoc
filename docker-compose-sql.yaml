@@ -8,5 +8,5 @@ services:
       - MYSQL_DATABASE=hedgedoc
       - MYSQL_ALLOW_EMPTY_PASSWORD=true
     volumes:
-      - $PWD/database:/var/lib/mysql
+      - /home/sql_data:/var/lib/mysql
     restart: always
