@@ -16,14 +16,14 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          dockerImage = docker.build("hedgedoc:${params.VERSION}", "--build-arg VERSION=${params.VERSION} --network=host .")
+          dockerImage = docker.build("devvetton/hedgedoc:${params.VERSION}", "--build-arg VERSION=${params.VERSION} --network=host .")
         }
       }
     }
     stage('Deploy Image') {
       steps{
         script {
-          docker.withRegistry( 'https://hub.docker.com/repository/docker/devvetton/hedgedoc', registryCredential ) {
+          docker.withRegistry( '', registryCredential ) {
           dockerImage.push()
           }
         }
