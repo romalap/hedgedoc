@@ -23,7 +23,7 @@ pipeline {
     stage('Deploy Image') {
       steps{
         script {
-          docker.withRegistry( 'devvetton/hedgedoc', registryCredential ) {
+          docker.withRegistry( 'devvetton', registryCredential ) {
           dockerImage.push()
           }
         }
