@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('run_docker') {
             steps {
-            sh 'docker-compose -f docker-compose-sql.yaml up'
+            sh 'docker-compose -f docker-compose-sql.yaml up -d'
             }
         }
     }
