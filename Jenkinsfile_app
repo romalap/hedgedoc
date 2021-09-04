@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'node1_sql' } 
+    agent { label 'node2_web' } 
     stages {
         stage('run_docker') {
             steps {
