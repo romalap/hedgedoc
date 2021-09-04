@@ -2,10 +2,10 @@ pipeline {
   environment {
     registry = "devvetton/hedgedoc"
     registryCredential = 'dockerhub'
+  }
   parameters {
     choice(name: 'VERSION', choices: ['master', '1.8.2', '1.8.1'], description: 'Pick the VERSION')
     }
-  }
   agent any
   stages {
     stage('Cloning Git') {
