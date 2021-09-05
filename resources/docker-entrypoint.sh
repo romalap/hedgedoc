@@ -1,6 +1,6 @@
 #!/bin/sh
 
-## Use gosu if the container started with root privileges
+# Use gosu if the container started with root privileges
 UID="$(id -u)"
 [ "$UID" -eq 0 ] && GOSU="gosu hedgedoc" || GOSU=""
 
@@ -30,7 +30,7 @@ if [ "$DB_SOCKET" != "" ]; then
     dockerize -wait "tcp://${DB_SOCKET}" -timeout 30s
 fi
 
-# Print warning if local data storage is used but no volume is mounted
+##################################### Print warning if local data storage is used but no volume is mounted
 [ "$CMD_IMAGE_UPLOAD_TYPE" = "filesystem" ] && { mountpoint -q ./public/uploads || {
     echo "
         #################################################################
