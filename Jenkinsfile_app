@@ -9,7 +9,7 @@ pipeline {
             sh """
             sudo docker-compose down
             echo "VERSION=${params.VERSION}" > .env
-            sudo docker-compose up --no-deps -d app
+            sudo docker-compose up
             """
             }
         }
