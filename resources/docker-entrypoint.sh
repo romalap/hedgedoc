@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Use gosu if the container started with root privileges
+## Use gosu if the container started with root privileges
 UID="$(id -u)"
 [ "$UID" -eq 0 ] && GOSU="gosu hedgedoc" || GOSU=""
 
