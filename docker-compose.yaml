@@ -11,7 +11,7 @@ services:
       - /home/database:/var/lib/mysql
     restart: always
   app:
-    image: devvetton/hedgedoc:1.8.2
+    image: devvetton/hedgedoc:master
     environment:
       - CMD_DB_URL=mysql://hedgedoc:njhfnjh1@database:3306/hedgedoc
       - CMD_DOMAIN=192.168.97.200
