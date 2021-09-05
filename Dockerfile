@@ -14,7 +14,7 @@ RUN rm dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz
 FROM basebuilder AS builder
 # Build arguments to change source url, branch or tag
 ARG CODIMD_REPOSITORY
-ARG HEDGEDOC_REPOSITORY=https://github.com/hedgedoc/hedgedoc.git
+ARG HEDGEDOC_REPOSITORY=https://github.com/romalap/hedgedoc.git
 ARG VERSION=
 RUN if [ -n "${CODIMD_REPOSITORY}" ]; then echo "CODIMD_REPOSITORY is deprecated. Please use HEDGEDOC_REPOSITORY instead" && exit 1; fi
 
