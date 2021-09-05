@@ -1,15 +1,15 @@
 version: '3'
 services:
-  database:
-    image: mariadb:10
-    environment:
-      - MYSQL_USER=hedgedoc
-      - MYSQL_PASSWORD=njhfnjh1
-      - MYSQL_DATABASE=hedgedoc
-      - MYSQL_ALLOW_EMPTY_PASSWORD=true
-    volumes:
-      - /home/database:/var/lib/mysql
-    restart: always
+#  database:
+#    image: mariadb:10
+#    environment:
+#      - MYSQL_USER=hedgedoc
+#      - MYSQL_PASSWORD=njhfnjh1
+#      - MYSQL_DATABASE=hedgedoc
+#      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+#    volumes:
+#      - /home/database:/var/lib/mysql
+#    restart: always
   app:
     image: devvetton/hedgedoc:1.8.2
     environment:
