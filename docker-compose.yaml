@@ -3,6 +3,7 @@ services:
   database:
     image: mariadb:10
     environment:
+      - MYSQL_ROOT_PASSWORD=njhfnjh1
       - MYSQL_USER=hedgedoc
       - MYSQL_PASSWORD=njhfnjh1
       - MYSQL_DATABASE=hedgedoc
