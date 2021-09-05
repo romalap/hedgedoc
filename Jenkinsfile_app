@@ -3,10 +3,11 @@ pipeline {
     stages {
         stage('run_docker') {
             steps {
-            sh '''
+            sh """
+            sudo docker-compose down
             echo "VERSION=${params.VERSION}" > .env
             sudo docker-compose up -d
-            '''
+            """
             }
         }
     }
