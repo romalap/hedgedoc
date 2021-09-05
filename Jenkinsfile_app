@@ -1,9 +1,9 @@
 pipeline {
-    agent { label 'node2_web' } 
+    agent { label 'node1' } 
     stages {
         stage('run_docker') {
             steps {
-            sh 'sudo docker-compose -f docker-compose-app.yaml up -d'
+            sh 'sudo docker-compose up -d'
             }
         }
     }
