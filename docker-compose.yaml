@@ -10,16 +10,16 @@ services:
     volumes:
       - /home/database:/var/lib/mysql
     restart: always
-  app:
-    image: devvetton/hedgedoc:1.8.2
-    environment:
-      - CMD_DB_URL=mysql://hedgedoc:njhfnjh1@database:3306/hedgedoc
-      - CMD_DOMAIN=192.168.97.101
-      - CMD_URL_ADDPORT=true
-    volumes:
-      - /home/uploads:/hedgedoc/public/uploads
-    ports:
-      - "3000:3000"
-    restart: always
-    depends_on:
-      - database
+#  app:
+#    image: devvetton/hedgedoc:1.8.2
+#    environment:
+#      - CMD_DB_URL=mysql://hedgedoc:njhfnjh1@database:3306/hedgedoc
+#      - CMD_DOMAIN=192.168.97.101
+#      - CMD_URL_ADDPORT=true
+#    volumes:
+#      - /home/uploads:/hedgedoc/public/uploads
+#    ports:
+#      - "3000:3000"
+#    restart: always
+#    depends_on:
+#      - database
