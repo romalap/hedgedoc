@@ -6,5 +6,5 @@ if grep 200 Result
     exit
 else
 echo "VERSION=1.8.2" > .env
-sudo docker-compose up -d
+docker-compose up -d
 fi
