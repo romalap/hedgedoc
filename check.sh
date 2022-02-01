@@ -1,6 +1,6 @@
 #!/bin/bash
 sleep 15
-curl --write-out %{http_code} --silent --output /dev/null http://192.168.97.200:3000 > Result
+curl --write-out %{http_code} --silent --output /dev/null http://localhost:3000 > Result
 if grep 200 Result
   then
     exit
